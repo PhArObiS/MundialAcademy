@@ -1,0 +1,144 @@
+.Home{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url(/assets/Home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.Home .HomeContertMain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradiant(130deg, #000, transparent);
+}
+
+.Home .HomeContent {
+    position: relative;
+}
+.Home .HomeContent h6 {
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.Home .HomeContent h6 span {
+    color: var(--main);
+    font-weight: 900;
+    
+}
+
+.Home .HomeContent h5 {
+    font-weight:900;
+    font-size: 40px;
+    margin-block: 10px;
+    border-bottom: 0.1px dashed var(--main); 
+}
+ 
+/*
+.Home {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/assets/Home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--text-light);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Add a subtle animated gradient overlay *
+.Home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(130deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+    animation: gradientShift 10s ease-in-out infinite;
+}
+
+/* Gradient animation *
+@keyframes gradientShift {
+    0% {
+        background: linear-gradient(130deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 70%);
+    }
+    50% {
+        background: linear-gradient(130deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 70%);
+    }
+    100% {
+        background: linear-gradient(130deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 70%);
+    }
+}
+
+.Home .HomeContentMain {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: var(--boxShadow);
+}
+
+/* Home Section Heading *
+.Home .HomeContent h6 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--main);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease;
+}
+
+.Home .HomeContent h6 span {
+    color: var(--hover-light);
+    font-weight: 900;
+    animation: textColorShift 3s ease infinite;
+}
+
+/* Subheading *
+.Home .HomeContent h5 {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-block: 1.5rem;
+    color: var(--text-light);
+    animation: fadeInUp 1.5s ease;
+}
+
+/* Animations for fade and text color shifts *
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textColorShift {
+    0% {
+        color: var(--main);
+    }
+    50% {
+        color: var(--hover-light);
+    }
+    100% {
+        color: var(--main);
+    }
+}
+*/

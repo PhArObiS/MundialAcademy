@@ -1,27 +1,182 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* For Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --main: #ffdf0e;
+  --bg-dark: #090d13;
+  --text-light: #ffffff;
+  --accent-dark: #161b22;
+  --hover-light: #ffe652;
+
+  /* Shadows and Borders */
+  --border: 0.1rem solid rgba(255, 223, 14, 0.5);
+  --boxShadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  --boxShadowHover: 15px 15px 20px rgba(0, 0, 0, 0.7);
+
+  /* Custom Sizing  */
+  --MB: 5rem;
+  --Pg: 2rem 8%;
+  --customColor: var(--bg-dark);
+
+  /* Typography */
+  --font-main: 'Cinzel Decorative', serif;
+  --font-body: 'Mulish', sans-serif;
+
+  /* Animations */
+  --transition: 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Global Styles */
+* {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: var(--transition);
+  text-decoration: none;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  color: var(--main);
+}
+
+/* Custom Selection Styling */
+*::selection {
+  background-color: var(--main);
+  color: var(--bg-dark);
+}
+
+/* Sections */
+section {
+  padding: var(--Pg);
+  margin-bottom: var(--MB);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main);
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Links */
+a {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+a:hover {
+  color: var(--main);
+}
+
+/* Button Styling */
+button, .btn {
+  background-color: var(--main);
+  color: var(--bg-dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--boxShadow);
+  font-family: var(--font-main);
+}
+
+button:hover, .btn:hover {
+  background-color: var(--hover-light);
+  box-shadow: var(--boxShadowHover);
+  transform: scale(1.05);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--Pg);
+  background-color: var(--accent-dark);
+  box-shadow: var(--boxShadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar img {
+  width: 60px;
+  height: auto;
+}
+
+.navbar a {
+  color: var(--text-light);
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  transition: var(--transition);
+}
+
+.navbar a:hover {
+  color: var(--main);
+}
+
+.navbar a.active {
+  color: var(--main);
+  text-decoration: underline;
+}
+
+/* Card Layout */
+.card {
+  background-color: var(--accent-dark);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--boxShadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--boxShadowHover);
+  transform: translateY(-10px);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
+
+  .navbar img {
+    width: 50px;
+  }
+
+  .navbar a {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1rem 5%;
+  }
+
+  button, .btn {
+    padding: 0.6rem 1.2rem;
   }
 }
